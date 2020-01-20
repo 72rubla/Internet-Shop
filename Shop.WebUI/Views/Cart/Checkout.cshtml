@@ -1,0 +1,41 @@
+﻿@model Shop.Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "Замовлення";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Оформити замовлення зараз</h2>
+<p>Будь ласка, введіть Ваші дані!</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary();
+    <h3>Данні</h3>
+    <div class="form-group">
+        <label>Ваше ім’я:</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "Name" && property.PropertyName != "GiftWrap")
+        {
+            <div class="form-group">
+                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+            </div>
+        }
+    }
+
+    @*<div class="form-group">
+        <label>Страна:</label>
+        @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+    </div>*@
+
+  
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Оформити" />
+    </div>
+}

@@ -1,0 +1,23 @@
+﻿@using Shop.Domain.Entities
+@using Shop.WebUI.Models
+@using Shop.WebUI.HtmlHelpers
+@model WaresListViewModel
+
+@{
+    ViewBag.Title = "Wares";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    @foreach (var p in @Model.Wares)
+    {
+       <a href=@Url.Action("GetCurentWare", "Ware", new { p.ID })> 
+        @Html.Partial("WareSummary", p)</a>
+    }
+
+       <div class="pull-right">
+           <div class="btn-group pull-right">
+               @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+             new { page = x, category = Model.CurrentCategory }))
+           </div>
+       </div>

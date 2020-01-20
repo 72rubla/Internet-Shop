@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "GetOrders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using Shop.Domain.Entities
+@using Shop.WebUI.Models
+@using Shop.WebUI.HtmlHelpers
+@model History
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Список замовлень</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">Номер замовлення</th>
+                <th>Дата</th>
+                <th class="text-right">Товари</th>
+                @*<th class="text-center">Користувач</th>*@
+                <th class="text-right">Сума</th>
+            </tr>
+            @foreach (var item in Model.Orders)
+            {
+                <tr>
+                    <td class="text-right">@item.Id</td>
+                    <td class="text-right">@item.Date.ToString()</td>
+                    <td class="text-right">
+                        @foreach (var item2 in Model.OrderWares)
+                        {
+                            @item2.WareId
+                            <span> </span>
+                        }
+                </td>
+                @*<td class="text-right">@item.User1</td>*@
+                <td class="text-right">@item.Sum.ToString("# грн")</td>
+            </tr>
+        }
+        </table>
+    </div>
+</div>

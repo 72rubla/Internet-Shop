@@ -1,0 +1,44 @@
+﻿@model Shop.Domain.Entities.Ware
+
+@*<div class="well">
+        <h3>
+            <strong>@Model.Name</strong>
+            <span class="pull-right label label-primary">@Model.Price.ToString("# грн")</span>
+        </h3>
+        <span class="lead">@Model.Description</span>
+    </div>*@
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+</head>
+<div class="well">
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-left" style="margin-right: 10px">
+            <img class="img-thumbnail" 
+                 src="@Url.Action("GetImage", "Ware",
+        new { Model.ID })" />
+        </div>
+    }
+    <h3>
+        <strong>@Model.Name</strong>
+        <span class="pull-right label label-primary">@Model.Price.ToString("# грн")</span>
+    </h3>
+
+
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        <div class="pull-right">
+            @Html.HiddenFor(x => x.ID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" class="btn btn-primary" value="Додати в кошик" />
+        </div>
+    }
+    <span class="lead">@Model.Description</span>
+</div>

@@ -1,0 +1,30 @@
+﻿@model Shop.Domain.Entities.Ware
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="container">
+    <h2>@Model.Name</h2>
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-top text-center"
+             style="margin-right: 10px">
+            <img class="img-thumbnail"
+                 src="@Url.Action("GetImage", "Ware",
+         new { Model.ID })" />
+        </div>
+    }
+    <div>@Model.Category</div>
+    <div>@Model.Price</div>
+    <div>@Model.Description</div>
+
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        <div class="pull-right">
+            @Html.HiddenFor(x => x.ID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" class="btn btn-primary cart" value="Додати в кошик" />
+        </div>
+    }
+</div>

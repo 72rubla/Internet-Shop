@@ -1,0 +1,21 @@
+﻿@model Shop.Domain.Entities.Cart
+
+<link href="~/Content/Images/" />
+<style>
+    .badge-dark{
+        border-radius:150px;
+    }
+</style>
+
+<div class="">
+    <a href=@Url.Action("Index", "Cart", new { returnUrl = Request.Url.PathAndQuery })><img width="60" src="~/Content/Images/cart.png" /></a>
+    @*<img src="~/Content/Images/cart.png" />*@
+    
+    <span class="badge-dark">@Model.Lines.Sum(x => x.Quantity)</span>
+    @*<span class="badge">@Model.ComputeTotalValue().ToString("#")</span> грн*@
+</div>
+@*<div class="navbar-right">
+    @Html.ActionLink("Кошик", "Index", "Cart",
+    new { returnUrl = Request.Url.PathAndQuery },
+    new { @class = "btn btn-default navbar-btn"})
+</div>*@

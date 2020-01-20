@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title></title>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="top-nav">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-auto">
+                        <img class="logo-image" width="70px" src="~/Content/Images/Logo.png" />
+                    </div>
+                    <div class="col-md-auto">
+                        <ul class="top-nav_menu">
+                            <li>@Html.ActionLink("Головна", "List", "Ware", new { area = "" }, new { @class = "" })</li>
+                            <li>@Html.ActionLink("Про компанію", "About", "Home", new { area = "" }, new { @class = "" })</a></li>
+                            <li>@Html.ActionLink("Контакти", "Contacts", "Home", new { area = "" }, new { @class = "" })</li>
+                            <li>@Html.ActionLink("Admin", "Index", "Admin", new { area = "" }, new { @class = "" })</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+}
+        @RenderBody()
+    </div>
+</body>
+</html>

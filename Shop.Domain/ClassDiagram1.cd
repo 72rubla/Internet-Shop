@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Shop.Domain.Concrete.EFDbContext">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Concrete\EFDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Domain.Concrete.EFWareRepository" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAA=</HashCode>
+      <FileName>Concrete\EFWareRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Shop.Domain.Concrete.EmailSettings">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAABAAAQACAAQBAQAAAAAAAAAACgAAAAAAAAAA=</HashCode>
+      <FileName>Concrete\EmailOrderProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Domain.Concrete.EmailOrderProcessor" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAI=</HashCode>
+      <FileName>Concrete\EmailOrderProcessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Shop.Domain.Entities.Cart">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAgAAAAAACAAAAAABGAAA=</HashCode>
+      <FileName>Entities\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Domain.Entities.CartLine">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Entities\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Domain.Entities.ShippingDetails">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAIQAAAAAAAAgAEAAQAAAAAA=</HashCode>
+      <FileName>Entities\ShippingDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Domain.Entities.Ware">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAggAAAAAAAAIQAAAAAAAAAAAABAAAACAA=</HashCode>
+      <FileName>Entities\Ware.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Shop.Domain.Abstract.IOrderProcessor">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Abstract\IOrderProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Shop.Domain.Abstract.IWareRepository">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAA=</HashCode>
+      <FileName>Abstract\IWareRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

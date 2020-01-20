@@ -1,0 +1,36 @@
+﻿@*@model IEnumerable<Shop.Domain.Entities.Ware>*@
+
+@{
+    ViewBag.Title = "Админ панель: список";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    a {
+        text-decoration: none;
+        color: darkslategray;
+        background-color: white;
+        display:block;
+    }
+    .aa{
+        padding:10px;
+    }
+</style>
+<div class="container">
+    <div class="col-md-3 offset-1">
+       
+        <div class="aa">
+            <a href=@Url.Action("GetWares", "Admin")><img width="60" src="~/Content/Images/tovar.png" /> Товари</a>
+        </div>
+        <div class="aa">
+            <a href=@Url.Action("GetUsers", "Admin")><img width="60" src="~/Content/Images/user.png" /> Користувачі</a>
+        </div>
+        <div class="aa">
+            <a href=@Url.Action("GetOrders", "Admin")><img width="60" src="~/Content/Images/history.png" /> Замовлення</a>
+        </div>
+    </div>
+</div>
+
+@*@Html.Action("GetWares")
+@Html.Action("GetUsers")
+@Html.Action("GetOrders")*@
